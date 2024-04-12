@@ -1,10 +1,75 @@
-<html>
-	<head>
-		<title>
-			Test page
-		</title>
-	</head>
-	<body>
-		<h2>Welcome to my Github test page!</h2>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #4CC9F0; /* Background color between blue and green */
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        #birthday-message {
+            font-size: 48px;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .balloon {
+            position: absolute;
+            animation-duration: 7s; /* faster appearance */
+            animation-iteration-count: infinite;
+            display: none;
+        }
+
+        @keyframes fly-up {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                display: block;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(0) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="birthday-message">С днём рождения, Влад!</h1>
+        <div id="balloon1" class="balloon" style="left: 10%;"><img src="balloon0.png" alt="Balloon" width="150"></div>
+        <div id="balloon2" class="balloon" style="left: 25%;"><img src="balloon2.png" alt="Balloon" width="150"></div>
+        <div id="balloon3" class="balloon" style="left: 40%;"><img src="balloon0.png" alt="Balloon" width="150"></div>
+        <div id="balloon4" class="balloon" style="left: 55%;"><img src="balloon1.png" alt="Balloon" width="150"></div>
+        <div id="balloon5" class="balloon" style="left: 70%;"><img src="balloon0.png" alt="Balloon" width="150"></div>
+    </div>
+
+    <script>
+        function animateBalloon() {
+            var balloons = document.querySelectorAll('.balloon');
+
+            balloons.forEach(function(balloon) {
+                var delay = Math.random() * 3; // Random delay between 0 and 10 seconds
+                setTimeout(function() {
+                    balloon.style.display = 'block';
+                    balloon.style.animationName = 'fly-up';
+                    setTimeout(function() {
+                        balloon.style.display = 'none';
+                        balloon.style.animationName = '';
+                    }, 8000); // Reset animation after 8 seconds (1 second after it completes)
+                }, delay * 1000);
+            });
+        }
+
+        animateBalloon();
+        setInterval(animateBalloon, 10000); // Reanimate balloons every 12 seconds
+    </script>
+</body>
 </html>
