@@ -30,6 +30,12 @@
             display: none;
         }
 
+	.neonText {
+		color: #ff0000;
+		text-shadow:
+		0 0 5px #fff;
+	}
+
         @keyframes fly-up {
             0% {
                 transform: translateY(100vh) translateX(0) rotate(0deg);
@@ -43,12 +49,12 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="birthday-message">С днём рождения, Влад!</h1>
-        <div id="balloon1" class="balloon" style="left: 10%;"><img src="balloon0.png" alt="Balloon" width="150"></div>
-        <div id="balloon2" class="balloon" style="left: 25%;"><img src="balloon2.png" alt="Balloon" width="150"></div>
-        <div id="balloon3" class="balloon" style="left: 40%;"><img src="balloon0.png" alt="Balloon" width="150"></div>
-        <div id="balloon4" class="balloon" style="left: 55%;"><img src="balloon1.png" alt="Balloon" width="150"></div>
-        <div id="balloon5" class="balloon" style="left: 70%;"><img src="balloon0.png" alt="Balloon" width="150"></div>
+        <h1 id="birthday-message" class="neonText">С днём рождения, Влад!</h1>
+        <div id="balloon1" class="balloon" style="left: 0%;"><img src="balloon0.png" alt="Balloon" width="200"></div>
+        <div id="balloon2" class="balloon" style="left: 20%;"><img src="balloon2.png" alt="Balloon" width="300"></div>
+        <div id="balloon3" class="balloon" style="left: 35%;"><img src="balloon0.png" alt="Balloon" width="200"></div>
+        <div id="balloon4" class="balloon" style="left: 50%;"><img src="balloon1.png" alt="Balloon" width="300"></div>
+        <div id="balloon5" class="balloon" style="left: 70%;"><img src="balloon0.png" alt="Balloon" width="200"></div>
     </div>
 
     <script>
